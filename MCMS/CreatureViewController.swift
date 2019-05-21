@@ -18,13 +18,16 @@ class CreatureViewController: UIViewController {
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var editTextField: UITextField!
     @IBOutlet weak var detailTextField: UITextField!
+    @IBOutlet weak var accessoryLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = creature.name
         detailLabel.text = creature.detail
-        detailLabel.sizeToFit()
+        
+        accessoryLabel.text = creature.accessory
+        
         imageView.image = creature.image
     }
     
@@ -38,6 +41,7 @@ class CreatureViewController: UIViewController {
     @IBAction func onDoneButtonPressed(_ sender: Any) {
         creature.name = editTextField.text
         creature.detail = detailTextField.text
+        
         editTextField.text = ""
         detailTextField.text = ""
         editButton.setTitle("Edit", for: .normal)

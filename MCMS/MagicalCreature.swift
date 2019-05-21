@@ -14,10 +14,12 @@ class MagicalCreature {
     var name : String!
     var detail : String!
     var image : UIImage?
+    var accessory : String!
     
-    init(name : String, detail : String, image: UIImage?) {
+    init(name : String, detail : String, image: UIImage?, accessory : String) {
         self.name = name
         self.detail = detail
         self.image = image
+        self.accessory = accessory
     }
 }

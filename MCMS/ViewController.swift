@@ -22,9 +22,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.reloadData()
         
-        let creature1 = MagicalCreature(name: "Goblin", detail: "Green", image: UIImage(named: "goblin"))
-        let creature2 = MagicalCreature(name: "Elf", detail: "Pointy Ears", image: UIImage(named: "elf"))
-        let creature3 = MagicalCreature(name: "Dwarf", detail: "Short", image: UIImage(named: "dwarf"))
+        let creature1 = MagicalCreature(name: "Goblin", detail: "Green", image: UIImage(named: "goblin"), accessory: "Club")
+        let creature2 = MagicalCreature(name: "Elf", detail: "Pointy Ears", image: UIImage(named: "elf"), accessory: "Ear Shaped Knives")
+        let creature3 = MagicalCreature(name: "Dwarf", detail: "Short", image: UIImage(named: "dwarf"), accessory: "Pick Ax")
         
         creatures = [creature1, creature2, creature3]
 
@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellID")
         let creature = creatures[indexPath.row]
         cell?.textLabel?.text = creature.name
-        cell?.detailTextLabel?.text = creature.detail
+        cell?.detailTextLabel?.text = "\(creature.detail!)\n\(creature.accessory!)"
         cell?.imageView?.image = creature.image
         return cell!
     }
@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBAction func onAddButtonPressed(_ sender: UIButton) {
         
-        let creature = MagicalCreature(name: "\(nameTextField.text!)", detail: "\(detailTextField.text!)", image: UIImage(named: "questionmark"))
+        let creature = MagicalCreature(name: "\(nameTextField.text!)", detail: "\(detailTextField.text!)", image: UIImage(named: "questionmark"), accessory: "Other")
         
         creatures.append(creature)
         tableView.reloadData()
