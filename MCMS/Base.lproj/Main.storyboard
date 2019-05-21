@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06u-M2-fLW">
-                                <rect key="frame" x="192" y="147" width="30" height="30"/>
+                                <rect key="frame" x="192" y="147" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
@@ -104,16 +104,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McX-5h-MsN">
+                                <rect key="frame" x="192" y="147" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="onDoneButtonPressed:" destination="DZ1-FZ-zZ5" eventType="touchUpInside" id="YOr-ts-4V6"/>
+                                    <action selector="onEditButtonPressed:" destination="DZ1-FZ-zZ5" eventType="touchUpInside" id="BxW-eJ-rPk"/>
+                                    <segue destination="vka-yO-xyL" kind="unwind" identifier="unwindSegue" unwindAction="unwindtoTableVCWithSegue:" id="zaS-xE-ghx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Nfb-2E-ssB"/>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="McX-5h-MsN" id="3xp-pH-feZ"/>
                         <outlet property="editButton" destination="06u-M2-fLW" id="NIr-Fz-DsR"/>
                         <outlet property="editTextField" destination="s8q-hE-WmK" id="Fj6-Xj-ZcW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4j-NM-SZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vka-yO-xyL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2009" y="761"/>
         </scene>

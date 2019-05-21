@@ -15,10 +15,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var creatures : [MagicalCreature] = []
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    var indexPath : IndexPath = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.reloadData()
         
         let creature1 = MagicalCreature(name: "Goblin")
         let creature2 = MagicalCreature(name: "Elf")
@@ -50,10 +51,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indexPath = tableView.indexPathForSelectedRow!
+        indexPath = tableView.indexPathForSelectedRow!
         let creature = creatures[indexPath.row]
         let cvc = segue.destination as! CreatureViewController
         cvc.creature = creature
     }
+    
+    @IBAction func unwindtoTableVC(segue: UIStoryboardSegue){
+        if segue.source is CreatureViewController {
+            if let senderVC = segue.source as? CreatureViewController{
+                creatures[indexPath.row] = senderVC.creature
+            }
+            tableView.reloadData()
+        }
+    }
+    
 }
 

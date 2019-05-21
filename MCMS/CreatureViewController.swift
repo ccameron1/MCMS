@@ -12,6 +12,7 @@ class CreatureViewController: UIViewController {
 
     var creature : MagicalCreature!
     
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var editTextField: UITextField!
     
@@ -22,22 +23,19 @@ class CreatureViewController: UIViewController {
     }
     
     @IBAction func onEditButtonPressed(_ sender: UIButton) {
-        if editTextField.isHidden {
-            editButton.titleLabel?.text = "Done"
+            editButton.isHidden = true
+            doneButton.isHidden = false
             editTextField.isHidden = false
-        } else {
-            creature.name = editTextField.text
-            editTextField.text = ""
-            editButton.titleLabel?.text = "Edit"
-            editTextField.isHidden = true
-            title = creature.name
-        }
-        
-        
-        
-        
     }
     
+    @IBAction func onDoneButtonPressed(_ sender: Any) {
+        creature.name = editTextField.text
+        editTextField.text = ""
+        editButton.setTitle("Edit", for: .normal)
+        editTextField.isHidden = true
+        title = creature.name
+        performSegue(withIdentifier: "unwindSegue", sender: nil)
+    }
     
     /*
     // MARK: - Navigation
