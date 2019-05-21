@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class MagicalCreature {
     
     var name : String!
     var detail : String!
+    var image : UIImage?
     
-    init(name : String, detail : String) {
+    init(name : String, detail : String, image: UIImage?) {
         self.name = name
         self.detail = detail
+        self.image = image
     }
 }

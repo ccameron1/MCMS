@@ -12,6 +12,7 @@ class CreatureViewController: UIViewController {
 
     var creature : MagicalCreature!
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
@@ -24,7 +25,7 @@ class CreatureViewController: UIViewController {
         title = creature.name
         detailLabel.text = creature.detail
         detailLabel.sizeToFit()
-        
+        imageView.image = creature.image
     }
     
     @IBAction func onEditButtonPressed(_ sender: UIButton) {

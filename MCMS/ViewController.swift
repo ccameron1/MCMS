@@ -22,9 +22,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.reloadData()
         
-        let creature1 = MagicalCreature(name: "Goblin", detail: "Green")
-        let creature2 = MagicalCreature(name: "Elf", detail: "Pointy Ears")
-        let creature3 = MagicalCreature(name: "Dwarf", detail: "Short")
+        let creature1 = MagicalCreature(name: "Goblin", detail: "Green", image: UIImage(named: "goblin"))
+        let creature2 = MagicalCreature(name: "Elf", detail: "Pointy Ears", image: UIImage(named: "elf"))
+        let creature3 = MagicalCreature(name: "Dwarf", detail: "Short", image: UIImage(named: "dwarf"))
         
         creatures = [creature1, creature2, creature3]
 
@@ -39,17 +39,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let creature = creatures[indexPath.row]
         cell?.textLabel?.text = creature.name
         cell?.detailTextLabel?.text = creature.detail
+        cell?.imageView?.image = creature.image
         return cell!
     }
     
 
     @IBAction func onAddButtonPressed(_ sender: UIButton) {
         
-        let creature = MagicalCreature(name: "\(nameTextField.text!)", detail: "other")
+        let creature = MagicalCreature(name: "\(nameTextField.text!)", detail: "\(detailTextField.text!)", image: UIImage(named: "questionmark"))
         
         creatures.append(creature)
         tableView.reloadData()
         nameTextField.text = ""
+        detailTextField.text = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

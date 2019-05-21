@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" textLabel="EUQ-Br-Ylw" detailTextLabel="vRT-mu-faX" style="IBUITableViewCellStyleSubtitle" id="dl3-oo-WKE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" textLabel="EUQ-Br-Ylw" detailTextLabel="vRT-mu-faX" imageView="cbi-t8-jGs" style="IBUITableViewCellStyleSubtitle" id="dl3-oo-WKE">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dl3-oo-WKE" id="GRo-xq-yAw">
@@ -44,6 +44,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cbi-t8-jGs">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -88,7 +91,7 @@
                     <navigationItem key="navigationItem" id="QGK-bJ-Y22"/>
                     <connections>
                         <outlet property="detailTextField" destination="aIa-7K-tMp" id="z7e-0O-l2C"/>
-                        <outlet property="nameTextField" destination="aIa-7K-tMp" id="scK-ph-U7i"/>
+                        <outlet property="nameTextField" destination="hkZ-4I-0Tp" id="5sL-5r-Npe"/>
                         <outlet property="tableView" destination="4cH-zQ-4EJ" id="oxP-59-DrJ"/>
                     </connections>
                 </viewController>
@@ -143,6 +146,10 @@
                                     <segue destination="vka-yO-xyL" kind="unwind" identifier="unwindSegue" unwindAction="unwindtoTableVCWithSegue:" id="zaS-xE-ghx"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNH-5H-lKe">
+                                <rect key="frame" x="0.0" y="415" width="414" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Nfb-2E-ssB"/>
@@ -153,6 +160,7 @@
                         <outlet property="doneButton" destination="McX-5h-MsN" id="3xp-pH-feZ"/>
                         <outlet property="editButton" destination="06u-M2-fLW" id="NIr-Fz-DsR"/>
                         <outlet property="editTextField" destination="s8q-hE-WmK" id="Fj6-Xj-ZcW"/>
+                        <outlet property="imageView" destination="kNH-5H-lKe" id="dY0-yK-81c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4j-NM-SZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
