@@ -12,28 +12,38 @@ class CreatureViewController: UIViewController {
 
     var creature : MagicalCreature!
     
+    @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var editTextField: UITextField!
+    @IBOutlet weak var detailTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = creature.name
+        detailLabel.text = creature.detail
+        detailLabel.sizeToFit()
+        
     }
     
     @IBAction func onEditButtonPressed(_ sender: UIButton) {
             editButton.isHidden = true
             doneButton.isHidden = false
             editTextField.isHidden = false
+            detailTextField.isHidden = false
     }
     
     @IBAction func onDoneButtonPressed(_ sender: Any) {
         creature.name = editTextField.text
+        creature.detail = detailTextField.text
         editTextField.text = ""
+        detailTextField.text = ""
         editButton.setTitle("Edit", for: .normal)
         editTextField.isHidden = true
+        detailTextField.isHidden = true
         title = creature.name
+        detailLabel.text = creature.detail
         performSegue(withIdentifier: "unwindSegue", sender: nil)
     }
     

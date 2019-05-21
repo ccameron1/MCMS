@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
    
     
 
+    @IBOutlet weak var detailTextField: UITextField!
     var creatures : [MagicalCreature] = []
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -21,9 +22,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.reloadData()
         
-        let creature1 = MagicalCreature(name: "Goblin")
-        let creature2 = MagicalCreature(name: "Elf")
-        let creature3 = MagicalCreature(name: "Dwarf")
+        let creature1 = MagicalCreature(name: "Goblin", detail: "Green")
+        let creature2 = MagicalCreature(name: "Elf", detail: "Pointy Ears")
+        let creature3 = MagicalCreature(name: "Dwarf", detail: "Short")
         
         creatures = [creature1, creature2, creature3]
 
@@ -37,13 +38,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellID")
         let creature = creatures[indexPath.row]
         cell?.textLabel?.text = creature.name
+        cell?.detailTextLabel?.text = creature.detail
         return cell!
     }
     
 
     @IBAction func onAddButtonPressed(_ sender: UIButton) {
         
-        let creature = MagicalCreature(name: "\(nameTextField.text!)")
+        let creature = MagicalCreature(name: "\(nameTextField.text!)", detail: "other")
         
         creatures.append(creature)
         tableView.reloadData()
