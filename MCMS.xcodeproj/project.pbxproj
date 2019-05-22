@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A4ABE352294C409001825CA /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4ABE342294C409001825CA /* BattleViewController.swift */; };
+		7A4ABE372294D469001825CA /* WinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4ABE362294D469001825CA /* WinnerViewController.swift */; };
 		7AC0274122947CDA00B591DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0274022947CDA00B591DC /* AppDelegate.swift */; };
 		7AC0274322947CDA00B591DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0274222947CDA00B591DC /* ViewController.swift */; };
 		7AC0274622947CDA00B591DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0274422947CDA00B591DC /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A4ABE342294C409001825CA /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		7A4ABE362294D469001825CA /* WinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerViewController.swift; sourceTree = "<group>"; };
 		7AC0273D22947CDA00B591DC /* MCMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC0274022947CDA00B591DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AC0274222947CDA00B591DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 				7AC0274222947CDA00B591DC /* ViewController.swift */,
 				7AC027542294818600B591DC /* CreatureViewController.swift */,
 				7AC0274422947CDA00B591DC /* Main.storyboard */,
+				7A4ABE342294C409001825CA /* BattleViewController.swift */,
+				7A4ABE362294D469001825CA /* WinnerViewController.swift */,
 				7AC0275222947D6500B591DC /* MagicalCreature.swift */,
 				7AC0274722947CDE00B591DC /* Assets.xcassets */,
 				7AC0274922947CDE00B591DC /* LaunchScreen.storyboard */,
@@ -145,6 +151,8 @@
 				7AC027552294818600B591DC /* CreatureViewController.swift in Sources */,
 				7AC0274122947CDA00B591DC /* AppDelegate.swift in Sources */,
 				7AC0275322947D6500B591DC /* MagicalCreature.swift in Sources */,
+				7A4ABE352294C409001825CA /* BattleViewController.swift in Sources */,
+				7A4ABE372294D469001825CA /* WinnerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

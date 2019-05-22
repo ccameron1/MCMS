@@ -19,6 +19,7 @@ class CreatureViewController: UIViewController {
     @IBOutlet weak var editTextField: UITextField!
     @IBOutlet weak var detailTextField: UITextField!
     @IBOutlet weak var accessoryLabel: UILabel!
+    @IBOutlet weak var accessoryTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,19 +37,24 @@ class CreatureViewController: UIViewController {
             doneButton.isHidden = false
             editTextField.isHidden = false
             detailTextField.isHidden = false
+            accessoryTextField.isHidden = false
     }
     
     @IBAction func onDoneButtonPressed(_ sender: Any) {
         creature.name = editTextField.text
         creature.detail = detailTextField.text
-        
+        creature.accessory = accessoryLabel.text
+
         editTextField.text = ""
         detailTextField.text = ""
+        accessoryTextField.text = ""
         editButton.setTitle("Edit", for: .normal)
         editTextField.isHidden = true
         detailTextField.isHidden = true
+        accessoryTextField.isHidden = true
         title = creature.name
         detailLabel.text = creature.detail
+        accessoryLabel.text = creature.accessory
         performSegue(withIdentifier: "unwindSegue", sender: nil)
     }
     
